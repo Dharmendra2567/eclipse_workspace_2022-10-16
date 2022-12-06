@@ -1,0 +1,17 @@
+.custom-bg{
+	 background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(17,114,224,1) 14.1%, rgba(115,190,205,1) 81.6% );
+}
+.nav-link{
+	font-size:15px;
+	 font-weight:bold;
+}
+.cart-img{
+	height:20px;
+	width:30px;
+}
+.admin .card{
+	border:1px solid red;
+}
+.admin .card:hover{
+	background:#e2e2e2;
+}

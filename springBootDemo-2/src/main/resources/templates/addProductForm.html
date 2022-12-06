@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add product Form</title>
+<style>
+	form {
+		width:500px;
+		margin:auto;
+		text-align:center;
+		}
+	input {
+		width:400px;
+		display:block;
+		margin:20px 0 0 0;
+		text-align:center;
+		}
+</style>
+</head>
+<body>
+	<form action="add" method="POST">
+	<label style="font-weight:bold; font-size:50px">Add Product</label>
+		<input type="text" name="name" placeholder="product name"/>
+		<input type="text" name="manufacturer" placeholder="manufacturer"/>
+		<input type="text" name="description" placeholder="description"/>
+		<input type="submit" name="submit" value="Add Product"/>
+		
+	</form>
+</body>
+</html>

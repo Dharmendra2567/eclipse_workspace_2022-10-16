@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>product</title>
+</head>
+<body>
+<h1>products</h1>
+<a href="/products/add"><button>Add Product</button></a>
+<table>
+	<thead>
+		<tr>
+		<th>Id</th>
+		<th>Product</th>
+		<th>Manufacturer</th>
+		<th>Description</th>
+		<th>Quantity</th>
+		<th>Price</th>
+		<th>Active</th>
+		<th>imageURL</th>
+		<th>DateUpdated</th>
+		<th>DateCreated</th>
+		<th>CategoryId</th>
+		<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="product:${products}">
+			<td th:text="${product.id}"></td>
+			<td th:text="${product.name}"></td>
+			<td th:text="${product.manufacturer}"></td>
+			<td th:text="${product.description}"></td>
+			<td th:text="${product.quantity}"></td>
+			<td th:text="${product.price}"></td>
+			<td th:text="${product.active}"></td>
+			<td th:text="${product.imageURL}"></td>
+			<td th:text="${product.dateUpdated}"></td>
+			<td th:text="${product.createdDate}"></td>
+			<td th:each="category:${categories}" th:text="${category.id}"></td>
+			<td>
+				<a th:href="'/products/update/'+${product.id}"><button>Update</button></a>
+				<a th:href="'/products/delete/'+${product.id}"><button>Delete</button></a>
+			</td>
+			
+		</tr>
+	</tbody>
+	</table>
+</body>
+</html>

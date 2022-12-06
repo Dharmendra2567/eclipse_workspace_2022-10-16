@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	form {
+		width:500px;
+		margin:auto;
+		
+		}
+	input {
+	
+		width:100%;
+		font-size:20px;
+		margin:20px 0 0 0;
+		
+		}
+		select {
+		display:block;
+		width:100%;
+		font-size:20px;
+		}
+		#submit {
+		width:100%;
+		display:block;
+		color:white;
+		background-color:indigo;
+		font-size:20px;
+		font-weight:bold;
+		}
+		label{
+		font-size:20px;
+		margin:10px 0px;
+		}
+		.radio{
+		width:10px;
+		
+		font-size:20px;
+		}
+</style>
+</head>
+<body>
+	<form th:action="'/products/update/'+${p.id}" method="POST" enctype="multipart/form-data">
+	<label style="font-weight:bold; font-size:50px">Update Product</label><br>
+	
+	<select name="category">
+	<option th:each="category:${categories}" th:value="${category.id}" th:text="${category.name}">
+	</option>
+	</select>
+		<input type="hidden" name="id" th:value="${p.id}"/><br>
+		<input type="text" name="name" placeholder="product name" th:value="${p.name}"/><br>
+		<input type="text" name="manufacturer" placeholder="manufacturer" th:value="${p.manufacturer}"/><br>
+		<input type="text" name="description" placeholder="description" th:value="${p.description}"/><br>
+		<input type="number" name="price" placeholder="price" th:value="${p.price}"/><br>
+		<input type="file" value="image" name="image" placeholder="product image"><br><br>
+		<label>Status:</label><br>
+		<input class="radio" type="radio" name="active" value="false" th:checked="${p.active}?'checked':'unchecked'"/><label>InActive</label><br>
+		<input class="radio" type="radio" name="active" value="true" th:checked="${p.active}"/><label>Active</label><br>
+		<input type="number" name="quantity" placeholder="quantity"  th:value="${p.quantity}">
+				
+		<input id="submit" type="submit" name="submit"/>
+		
+</form>
+</body>
+</html>
