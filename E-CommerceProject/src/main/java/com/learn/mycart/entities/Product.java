@@ -14,30 +14,14 @@ public class Product {
 	private String pName;
 	private String pDescription;
 	private String pPhoto;
-	private String pPrice;
-	private String pDiscount;
-	private String pQuantity;
+	private int pPrice;
+	private int pDiscount;
+	private int pQuantity;
 	@ManyToOne
 	private Category category;
 	
-	public Product() {
-		super();
-	}
-
-	public Product(int pId, String pName, String pDescription, String pPhoto, String pPrice, String pDiscount,
-			String pQuantity) {
-		super();
-		this.pId = pId;
-		this.pName = pName;
-		this.pDescription = pDescription;
-		this.pPhoto = pPhoto;
-		this.pPrice = pPrice;
-		this.pDiscount = pDiscount;
-		this.pQuantity = pQuantity;
-	}
-
-	public Product(String pName, String pDescription, String pPhoto, String pPrice, String pDiscount,
-			String pQuantity,Category category) {
+	public Product(String pName, String pDescription, String pPhoto, int pPrice, int pDiscount,
+			int pQuantity,Category category) {
 		super();
 		this.pName = pName;
 		this.pDescription = pDescription;
@@ -48,6 +32,24 @@ public class Product {
 		this.category=category;
 	}
 
+	
+	public Product() {
+		super();
+	}
+
+	public Product(int pId, String pName, String pDescription, String pPhoto, int pPrice, int pDiscount,
+			int pQuantity) {
+		super();
+		this.pId = pId;
+		this.pName = pName;
+		this.pDescription = pDescription;
+		this.pPhoto = pPhoto;
+		this.pPrice = pPrice;
+		this.pDiscount = pDiscount;
+		this.pQuantity = pQuantity;
+	}
+
+	
 	public int getpId() {
 		return pId;
 	}
@@ -80,27 +82,27 @@ public class Product {
 		this.pPhoto = pPhoto;
 	}
 
-	public String getpPrice() {
+	public int getpPrice() {
 		return pPrice;
 	}
 
-	public void setpPrice(String pPrice) {
+	public void setpPrice(int pPrice) {
 		this.pPrice = pPrice;
 	}
 
-	public String getpDiscount() {
+	public int getpDiscount() {
 		return pDiscount;
 	}
 
-	public void setpDiscount(String pDiscount) {
+	public void setpDiscount(int pDiscount) {
 		this.pDiscount = pDiscount;
 	}
 
-	public String getpQuantity() {
+	public int getpQuantity() {
 		return pQuantity;
 	}
 
-	public void setpQuantity(String pQuantity) {
+	public void setpQuantity(int pQuantity) {
 		this.pQuantity = pQuantity;
 	}
 	

@@ -9,9 +9,10 @@
 	height:20px;
 	width:30px;
 }
-.admin .card{
-	border:1px solid red;
+.admin .card-sm{
+	border:2px solid #000000;
 }
-.admin .card:hover{
+.admin .card-sm:hover{
 	background:#e2e2e2;
+	cursor:pointer;
 }
